@@ -1,5 +1,7 @@
 // I think flexbox. Especially if you are doing the etch and sketch project and are dynamically generating your boxes. Logic is as follows:
 
+
+
 // Dynamically determine box size: let's say you want your total grid of boxes to take up 700 pixels, the math is 700/number of boxes.
 
 // Do two loops with one nested in the other that iterates for the total number of boxes you want.
@@ -10,23 +12,46 @@
 
 // Hopefully that makes sense.
 
+
+
+const button = document.getElementById('btn')
 const container = document.querySelector('.container');
 
-function createBoxes (numBox) {
 
+button.addEventListener('click',function(e){
+  container.textContent = ''
+  let gridSize
+  while (true){
+    gridSize = prompt('Enter the size of your grid(1-100)')
+    if (gridSize >0 && gridSize <101){
+      break
+    }else if(gridSize == null){
+      break
+    }
+
+  }
+  createBoxes(gridSize)
+}
+)
+
+
+function createBoxes (numBox) {
+  const boxSize = Math.round(400/numBox)
   for(let i = 0; i < numBox;i++){
     const row = container.appendChild(document.createElement('div'))
     for(let j = 0; j < numBox;j++){
+      
       const square = document.createElement('div')
       square.setAttribute('class', 'box')
-      square.style.width = '20px'
-      square.style.height = '20px'
+      square.style.width = `${boxSize}px`
+      console.log(square.style.width)
+      square.style.height = `${boxSize}px`
       row.appendChild(square)
     }
   }
   
 }
-createBoxes(64)
+// createBoxes(14)
 
 
 // CLICKING ON EACH SQUARE WILL TRIGGER CONSOLE LOG OF IT
