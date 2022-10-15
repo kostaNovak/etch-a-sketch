@@ -36,7 +36,7 @@ button.addEventListener('click',function(e){
 
 
 function createBoxes (numBox) {
-  const boxSize = Math.round(400/numBox)
+  const boxSize = Math.round(600/numBox)
   for(let i = 0; i < numBox;i++){
     const row = container.appendChild(document.createElement('div'))
     for(let j = 0; j < numBox;j++){
