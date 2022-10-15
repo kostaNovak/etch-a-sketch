@@ -15,8 +15,10 @@ body{
 .box {
   border: 1px solid black;
 
+ }
 
-
+ .boxColor {
+  background-color: pink;
  }
 
 .container {

@@ -24,13 +24,33 @@ function createBoxes (numBox) {
       row.appendChild(square)
     }
   }
+  
 }
-createBoxes(16)
+createBoxes(64)
 
-let square = document.querySelectorAll('.box')
-console.log(square)
 
-// square.addEventListener('click', e=>{
-//   console.log(e)
+// CLICKING ON EACH SQUARE WILL TRIGGER CONSOLE LOG OF IT
+
+// document.addEventListener('click', function(e){
+//   if (e.target.matches('.box')){
+//     console.log(e)
+//   }
 // })
 
+//NOW WE NEED TO MAKE IT WORK SO INSTEAD WHEN WE CLICK IT CHANGES
+//BACKGROUND COLOR TO GRAY
+
+// document.addEventListener('click', function(e){
+//   if (e.target.matches('.box')){
+//     e.target.classList.add('boxColor')
+//   }
+// })
+
+//NOW INSTEAD OF CLICK WE SHOULD HOVER IT AND IT SHOULD CHANGE COLOR
+
+document.addEventListener('mouseover', function(e){
+    if (e.target.matches('.box')){
+       e.target.classList.add('boxColor')
+   }
+  
+})
